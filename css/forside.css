@@ -1,0 +1,300 @@
+/* ===== BASE SITE CSS START ===== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 0.625rem = 10px */
+html {
+  font-family: "poppins", sans-serif;
+  font-size: 0.625rem;
+}
+
+/* 1.6rem = 16px */
+body {
+  font-size: 1.6rem;
+  overflow: hidden;
+  background-color: #000;
+}
+/* ===== BASE SITE CSS END ===== */
+
+/* Header */
+.header {
+  background-color: rgba(237, 14, 14, 0);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 35px;
+  margin: 0;
+  z-index: 100;
+}
+.header .header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+/* Button */
+.header .header-content .button {
+  color: #fff;
+  text-decoration: none;
+  border: 0.5px solid #fff;
+  padding: 3px 14px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  font-size: 1em;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.header .header-content .button:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #154b90;
+  border: 0.5px solid #154b90;
+}
+
+/* Hambruger menu */
+input {
+  display: none;
+}
+
+.open {
+  background-color: #ffffff;
+  width: 28px;
+  height: 2px;
+  display: block;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.open:before {
+  cursor: pointer;
+  content: "";
+  background-color: #ffffff;
+  width: 28px;
+  height: 2px;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+  top: -9px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.open:after {
+  cursor: pointer;
+  content: "";
+  background-color: #ffffff;
+  width: 28px;
+  height: 2px;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+  top: 7px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.menuOpen {
+  cursor: pointer;
+  width: 28px;
+  height: 20px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+}
+
+.menuOpen:hover .open:before {
+  top: -10px;
+}
+
+.menuOpen:hover .open:after {
+  top: 8px;
+}
+
+.menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #154a90db;
+}
+
+.menu .menuContent {
+  position: relative;
+  top: 30%;
+  font-size: 30px;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.menuContent ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menuContent ul li {
+  margin-bottom: 40px;
+}
+
+.menuContent ul li a {
+  width: 100%;
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: "poppins";
+  text-transform: uppercase;
+  padding: 0;
+  letter-spacing: 2px;
+}
+
+/* Animation on hover */
+.hover-underline-animation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #fff;
+  width: fit-content;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.menuEffects {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.menuEffects ul {
+  transform: translateY(0%);
+  transition: all 0.5s;
+}
+
+/* Close hamburger menu */
+#menuToggle:checked ~ .menuEffects {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
+}
+
+#menuToggle:checked ~ .menuEffects ul {
+  opacity: 1;
+}
+
+#menuToggle:checked ~ .menuOpen .open {
+  background-color: transparent;
+}
+
+#menuToggle:checked ~ .menuOpen .open:before {
+  content: "";
+  background-color: white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#menuToggle:checked ~ .menuOpen .open:after {
+  content: "";
+  background-color: white;
+  transform: rotate(-45deg);
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#menuToggle:not(:checked) ~ .menuEffects ul {
+  transform: translateY(-30%);
+}
+
+/* Forside - index.html */
+.sec-1 {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/pexels-mikhail-nilov-8093543.jpg");
+  background-position: center;
+  background-size: cover;
+  opacity: 1;
+}
+
+.box-1 {
+  position: relative;
+  top: -30px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-1 h1 {
+  color: white;
+  font-family: "poppins";
+  letter-spacing: 3px;
+  font-weight: 400;
+  font-size: 2em;
+  z-index: 3;
+}
+
+/* Noise overlay */
+.noise::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  /* you can control opacity of noise  */
+  opacity: 0.04;
+  z-index: 1;
+  pointer-events: none;
+  background: url("../gif/noise.gif");
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 30px 30px;
+  }
+
+  .menuOpen {
+    margin-right: 0px;
+  }
+}

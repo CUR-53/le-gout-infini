@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link rel="stylesheet" href="css/kontakt.css" />
+    <title>Le goût infini</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div class="header-content">
+          <a class="button" href="./index.html">Home</a>
+          <a class="button" id="button" href="./medlemskab.html">Medlemskab</a>
+          <div id="menuArea">
+            <input type="checkbox" id="menuToggle" />
+
+            <label for="menuToggle" class="menuOpen">
+              <div class="open"></div>
+            </label>
+
+            <div class="menu menuEffects">
+              <div class="menuContent">
+                <ul>
+                  <li class="hover-underline-animation">
+                    <a href="om-os.html">Om os</a>
+                  </li>
+                  <li class="hover-underline-animation">
+                    <a href="galleri.html">Galleri</a>
+                  </li>
+                  <li class="hover-underline-animation">
+                    <a href="medlemskab.html">Medlemskab</a>
+                  </li>
+                  <li class="hover-underline-animation">
+                    <a href="kontakt.html">Kontakt os</a>
+                  </li>
+                  <li class="hover-underline-animation">
+                    <a href="nyhedsbrev.html">Nyhedsbrev</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="sec-1">
+      <div class="mainBox">
+        <div class="box-1">
+          <div class="container">
+            <h3>Kontakt os</h3>
+            <p>
+              Udfyld kontaktformen, hvis du ønsker at komme i kontakt med Le
+              goût infini
+            </p>
+            <br />
+            <form action="#">
+              <div class="row2 rowSpace">
+                <label for="fname">Fornavn</label>
+                <input
+                  type="text"
+                  id="fname"
+                  name="firstname"
+                  placeholder="Fornavn"
+                  required
+                />
+              </div>
+              <div class="row3 rowSpace">
+                <label for="efname">Efternavn</label>
+                <input
+                  type="text"
+                  id="efname"
+                  name="efname"
+                  placeholder="Efternavn"
+                  required
+                />
+              </div>
+              <div class="row rowSpace">
+                <label for="email">E-mail adresse</label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail adresse"
+                  required
+                />
+              </div>
+              <div class="row rowSpace">
+                <label for="message">Besked</label>
+                <textarea
+                  type="text"
+                  id="message"
+                  name="message"
+                  placeholder="Besked"
+                  required
+                ></textarea>
+              </div>
+              <div class="submitButton">
+                <div class="buttonStyle">
+                  <input type="submit" value="Insend" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

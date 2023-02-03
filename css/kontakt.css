@@ -1,0 +1,443 @@
+/* ===== BASE SITE CSS START ===== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 0.625rem = 10px */
+html {
+  font-family: "poppins", sans-serif;
+  font-size: 0.625rem;
+}
+
+/* 1.6rem = 16px */
+body {
+  font-size: 1.6rem;
+  background-color: #000;
+}
+/* ===== BASE SITE CSS END ===== */
+
+/* Header */
+.header {
+  background-color: rgba(237, 14, 14, 0);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 35px;
+  margin: 0;
+  z-index: 100;
+}
+
+.header .header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+/* Button */
+.header .header-content .button {
+  color: #fff;
+  text-decoration: none;
+  border: 0.5px solid #fff;
+  padding: 3px 14px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  font-size: 1em;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.header .header-content .button:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #154b90;
+  border: 0.5px solid #154b90;
+}
+
+#button {
+  position: absolute;
+  left: 135px;
+}
+
+/* Hambruger menu */
+input {
+  display: none;
+}
+
+.open {
+  background-color: #ffffff;
+  width: 28px;
+  height: 2px;
+  display: block;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.open:before {
+  cursor: pointer;
+  content: "";
+  background-color: #ffffff;
+  width: 28px;
+  height: 2px;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+  top: -9px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.open:after {
+  cursor: pointer;
+  content: "";
+  background-color: #ffffff;
+  width: 28px;
+  height: 2px;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+  top: 7px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.menuOpen {
+  cursor: pointer;
+  width: 28px;
+  height: 20px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+}
+
+.menuOpen:hover .open:before {
+  top: -10px;
+}
+
+.menuOpen:hover .open:after {
+  top: 8px;
+}
+
+.menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #154a90db;
+}
+
+.menu .menuContent {
+  position: relative;
+  top: 30%;
+  font-size: 30px;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.menuContent ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menuContent ul li {
+  margin-bottom: 40px;
+}
+
+.menuContent ul li a {
+  width: 100%;
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: "poppins";
+  text-transform: uppercase;
+  padding: 0;
+  letter-spacing: 2px;
+}
+
+/* Animation on hover */
+.hover-underline-animation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #fff;
+  width: fit-content;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.menuEffects {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.menuEffects ul {
+  transform: translateY(0%);
+  transition: all 0.5s;
+}
+
+/* Close hamburger menu */
+#menuToggle:checked ~ .menuEffects {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
+}
+
+#menuToggle:checked ~ .menuEffects ul {
+  opacity: 1;
+}
+
+#menuToggle:checked ~ .menuOpen .open {
+  background-color: transparent;
+}
+
+#menuToggle:checked ~ .menuOpen .open:before {
+  content: "";
+  background-color: white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#menuToggle:checked ~ .menuOpen .open:after {
+  content: "";
+  background-color: white;
+  transform: rotate(-45deg);
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#menuToggle:not(:checked) ~ .menuEffects ul {
+  transform: translateY(-30%);
+}
+
+/* Kontakt - kontakt.html */
+.sec-1 {
+  height: 100vh;
+  width: 100vw;
+}
+
+.box-1 {
+  margin-top: 18vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainBox {
+  display: flex;
+  justify-content: center;
+  padding: 0 15vw;
+  gap: 30px;
+  height: 650px;
+}
+
+/* Contact form */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 7px;
+  margin-bottom: 16px;
+  resize: vertical;
+  display: flex;
+}
+
+label {
+  font-family: "poppins";
+  color: #000;
+  font-weight: 500;
+  font-size: 0.9em;
+  padding-left: 1px;
+  letter-spacing: 0.1px;
+}
+
+textarea[type="text"] {
+  font-family: "poppins";
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  display: flex;
+}
+
+input[type="submit"] {
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input[type="submit"]:hover {
+  background-color: #154b90;
+  color: white;
+}
+
+.container {
+  width: 700px;
+  height: auto;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 60px 45px 60px 45px;
+}
+
+.container h3 {
+  font-size: 1.6em;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.container p {
+  color: rgb(60, 60, 60);
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.row {
+  width: 100%;
+  padding-right: 10px;
+}
+
+.row2 {
+  display: inline-block;
+  width: 49%;
+  padding-right: 10px;
+}
+
+.row3 {
+  display: inline-block;
+  width: 49%;
+  padding-left: 10px;
+}
+
+.submitButton {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.rowSpace {
+  padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 760px) {
+  #button {
+    display: none;
+  }
+
+  .mainBox {
+    padding: 0 30px;
+    height: auto;
+  }
+
+  .header {
+    padding: 30px 30px;
+  }
+
+  .menuOpen {
+    margin-right: 0px;
+  }
+
+  .box-1 {
+    margin-bottom: 150px;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 60px 40px 60px 40px;
+  }
+
+  .row {
+    width: 100%;
+    padding-right: 0px;
+  }
+
+  .row2 {
+    display: block;
+    width: 100%;
+    padding-right: 0px;
+  }
+
+  .row3 {
+    display: inline-block;
+    width: 100%;
+    padding-left: 0px;
+  }
+
+  input[type="submit"] {
+    padding: 0px;
+  }
+
+  .submitButton {
+    margin-right: 0px;
+  }
+
+  .buttonStyle {
+    background-color: #000;
+    padding: 12px 25px;
+    border-radius: 4px;
+  }
+}

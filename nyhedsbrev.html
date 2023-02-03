@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <link rel="stylesheet" href="css/nyhedsbrev.css" />
+    <title>Le goût infini</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div class="header-content">
+          <a class="button" href="./index.html">Home</a>
+          <a class="button" id="button" href="./medlemskab.html">Medlemskab</a>
+          <div id="menuArea">
+            <input type="checkbox" id="menuToggle" />
+
+            <label for="menuToggle" class="menuOpen">
+              <div class="open"></div>
+            </label>
+
+            <div class="menu menuEffects">
+              <div class="menuContent">
+                <ul>
+                  <li class="hover-underline-animation">
+                    <a href="om-os.html">Om os</a>
+                  </li>
+                    <li class="hover-underline-animation">
+                    <a href="galleri.html">Galleri</a>
+                  </li>
+                  <li class="hover-underline-animation">
+                    <a href="medlemskab.html">Medlemskab</a>
+                  </li>
+                  <li class="hover-underline-animation">
+                    <a href="kontakt.html">Kontakt os</a>
+                  </li>
+                  <li class="hover-underline-animation">
+                    <a href="nyhedsbrev.html">Nyhedsbrev</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="sec-1">
+      <div class="box-1">
+        <div class="mainBox">
+      <div class="container">
+          <h3>Nyhedsbrev</h3>
+          <p>For at høre mere om kommende arrangementer, tilbud og nyheder bedes du tilmelde dig nyhedsbrevet nedenfor.</p>
+        <form action="">
+            <label for="fname"></label>
+              <input
+                type="text"
+                id="fname"
+                name="firstname"
+                placeholder="Fornavn"
+                required
+              />
+              <label for="efname"></label>
+              <input
+                type="text"
+                id="efname"
+                name="efname"
+                placeholder="Efternavn"
+                required
+              />
+            <label for="email"></label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="E-mail adresse"
+              required
+            />
+          <div class="submitButton">
+              <input type="submit" value="Tilmeld" />
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,365 @@
+/* ===== BASE SITE CSS START ===== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 0.625rem = 10px */
+html {
+  font-family: "poppins", sans-serif;
+  font-size: 0.625rem;
+}
+
+/* 1.6rem = 16px */
+body {
+  font-size: 1.6rem;
+  background-color: #000;
+}
+/* ===== BASE SITE CSS END ===== */
+
+/* Header */
+.header {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 35px;
+  margin: 0;
+  z-index: 100;
+}
+.header .header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+/* Button */
+.header .header-content .button {
+  color: #fff;
+  text-decoration: none;
+  border: 0.5px solid #fff;
+  padding: 3px 14px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  font-size: 1em;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.header .header-content .button:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #154b90;
+  border: 0.5px solid #154b90;
+}
+
+#button {
+  position: absolute;
+  left: 135px;
+}
+
+/* Hambruger menu */
+input {
+  display: none;
+}
+
+.open {
+  background-color: #ffffff;
+  width: 28px;
+  height: 2px;
+  display: block;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.open:before {
+  cursor: pointer;
+  content: "";
+  background-color: #ffffff;
+  width: 28px;
+  height: 2px;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+  top: -9px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.open:after {
+  cursor: pointer;
+  content: "";
+  background-color: #ffffff;
+  width: 28px;
+  height: 2px;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+  top: 7px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.menuOpen {
+  cursor: pointer;
+  width: 28px;
+  height: 20px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+}
+
+.menuOpen:hover .open:before {
+  top: -10px;
+}
+
+.menuOpen:hover .open:after {
+  top: 8px;
+}
+
+.menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #154a90db;
+}
+
+.menu .menuContent {
+  position: relative;
+  top: 30%;
+  font-size: 30px;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.menuContent ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menuContent ul li {
+  margin-bottom: 40px;
+}
+
+.menuContent ul li a {
+  width: 100%;
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: "poppins";
+  text-transform: uppercase;
+  padding: 0;
+  letter-spacing: 2px;
+}
+
+/* Animation on hover */
+.hover-underline-animation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #fff;
+  width: fit-content;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.menuEffects {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.menuEffects ul {
+  transform: translateY(0%);
+  transition: all 0.5s;
+}
+
+/* Close hamburger menu */
+#menuToggle:checked ~ .menuEffects {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
+}
+
+#menuToggle:checked ~ .menuEffects ul {
+  opacity: 1;
+}
+
+#menuToggle:checked ~ .menuOpen .open {
+  background-color: transparent;
+}
+
+#menuToggle:checked ~ .menuOpen .open:before {
+  content: "";
+  background-color: white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#menuToggle:checked ~ .menuOpen .open:after {
+  content: "";
+  background-color: white;
+  transform: rotate(-45deg);
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#menuToggle:not(:checked) ~ .menuEffects ul {
+  transform: translateY(-30%);
+}
+
+/* Galleri - galleri.html */
+.sec-1 {
+  height: 100%;
+  width: 100%;
+}
+
+.box-1 {
+  width: 1200px;
+  height: 100%;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mainHeader {
+  text-align: center;
+  font-size: 2.5em;
+  color: #fff;
+  font-weight: 600;
+}
+
+.mainText {
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 50px;
+  padding: 0 50px;
+  color: #fff;
+  font-weight: 300;
+}
+
+.row-1 {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.img-1 {
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+  background-color: rgb(50, 50, 50);
+}
+
+.row-2 {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.img-2 {
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+  background-color: rgb(50, 50, 50);
+}
+
+.row-3 {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.img-3 {
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+  background-color: rgb(50, 50, 50);
+}
+
+@media only screen and (max-width: 1200px) {
+  #button {
+    display: none;
+  }
+  .header {
+    padding: 30px 30px;
+  }
+  .menuOpen {
+    margin-right: 0px;
+  }
+  .box-1 {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 30px;
+    padding-right: 30px;
+    flex-direction: column;
+  }
+  .row-1 {
+    flex-wrap: wrap;
+  }
+  .row-2 {
+    flex-wrap: wrap;
+  }
+  .row-3 {
+    flex-wrap: wrap;
+  }
+  .mainText {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
