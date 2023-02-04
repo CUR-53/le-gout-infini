@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
     <link rel="stylesheet" href="css/nyhedsbrev.css" />
     <title>Le goût infini</title>
   </head>
@@ -13,7 +16,7 @@
       <div class="header">
         <div class="header-content">
           <a class="button" href="./index.html">Home</a>
-          <a class="button" id="button" href="./medlemskab.html">Medlemskab</a>
+          <a class="button" id="button" href="./medlemskab.html">Membership</a>
           <div id="menuArea">
             <input type="checkbox" id="menuToggle" />
 
@@ -25,19 +28,19 @@
               <div class="menuContent">
                 <ul>
                   <li class="hover-underline-animation">
-                    <a href="om-os.html">Om os</a>
-                  </li>
-                    <li class="hover-underline-animation">
-                    <a href="galleri.html">Galleri</a>
+                    <a href="om-os.html">About us</a>
                   </li>
                   <li class="hover-underline-animation">
-                    <a href="medlemskab.html">Medlemskab</a>
+                    <a href="galleri.html">Gallery</a>
                   </li>
                   <li class="hover-underline-animation">
-                    <a href="kontakt.html">Kontakt os</a>
+                    <a href="medlemskab.html">Membership</a>
                   </li>
                   <li class="hover-underline-animation">
-                    <a href="nyhedsbrev.html">Nyhedsbrev</a>
+                    <a href="kontakt.html">Contact us</a>
+                  </li>
+                  <li class="hover-underline-animation">
+                    <a href="nyhedsbrev.html">Newsletter</a>
                   </li>
                 </ul>
               </div>
@@ -49,16 +52,19 @@
     <section class="sec-1">
       <div class="box-1">
         <div class="mainBox">
-      <div class="container">
-          <h3>Nyhedsbrev</h3>
-          <p>For at høre mere om kommende arrangementer, tilbud og nyheder bedes du tilmelde dig nyhedsbrevet nedenfor.</p>
-        <form action="">
-            <label for="fname"></label>
+          <div class="container">
+            <h3>Newsletter</h3>
+            <p>
+              To hear more about upcoming events, offers and news please sign up
+              for the newsletter below.
+            </p>
+            <form action="">
+              <label for="fname"></label>
               <input
                 type="text"
                 id="fname"
                 name="firstname"
-                placeholder="Fornavn"
+                placeholder="Firstname"
                 required
               />
               <label for="efname"></label>
@@ -66,22 +72,22 @@
                 type="text"
                 id="efname"
                 name="efname"
-                placeholder="Efternavn"
+                placeholder="Lastname"
                 required
               />
-            <label for="email"></label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="E-mail adresse"
-              required
-            />
-          <div class="submitButton">
-              <input type="submit" value="Tilmeld" />
-            </div>
+              <label for="email"></label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Email address"
+                required
+              />
+              <div class="submitButton">
+                <input type="submit" value="Submit" />
+              </div>
+            </form>
           </div>
-        </form>
         </div>
       </div>
     </section>
